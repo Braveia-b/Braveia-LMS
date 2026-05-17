@@ -20,7 +20,7 @@
                     data-aos="fade-up"
                     data-aos-delay="{{ $index * 50 }}"
                 >
-                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600/30 to-accent-indigo/30 text-primary-400 group-hover:shadow-lg group-hover:shadow-primary-600/20 transition-shadow">
+                    <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600/25 to-accent-navy/40 ring-1 ring-primary-500/20 text-primary-400 group-hover:shadow-lg group-hover:shadow-primary-600/20 transition-shadow">
                         @include('components.landing.partials.feature-icon', ['icon' => $feature['icon']])
                     </div>
                     <h3 class="font-display text-lg font-semibold text-white mb-2">{{ $feature['title'] }}</h3>

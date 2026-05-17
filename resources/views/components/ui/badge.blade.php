@@ -4,7 +4,7 @@
 $variants = [
     'default' => 'border-white/10 bg-white/5 text-slate-300',
     'primary' => 'border-primary-500/30 bg-primary-500/10 text-primary-400',
-    'cyan' => 'border-cyan-500/30 bg-cyan-500/10 text-cyan-400',
+    'gold' => 'border-primary-500/40 bg-primary-500/15 text-primary-400',
 ];
 @endphp
 

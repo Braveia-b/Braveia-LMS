@@ -5,12 +5,12 @@
 >
     <nav class="container-narrow mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a href="#home" class="flex items-center gap-2.5 group">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-accent-indigo shadow-lg shadow-primary-600/30">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 shadow-lg shadow-primary-600/30 ring-1 ring-primary-500/30">
                 <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                 </svg>
             </span>
-            <span class="font-display text-xl font-bold tracking-tight text-white group-hover:text-primary-400 transition-colors">Nex<span class="text-gradient">Learn</span></span>
+            <span class="font-display text-xl font-bold tracking-tight text-white group-hover:text-primary-400 transition-colors">Brave<span class="text-gradient">IA</span></span>
         </a>
 
         <div class="hidden lg:flex items-center gap-1 rounded-2xl glass px-2 py-1.5 nav-scrolled:bg-surface-800/80">

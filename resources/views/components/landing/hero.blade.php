@@ -3,7 +3,7 @@
     <div class="absolute inset-0 mesh-gradient mesh-animate pointer-events-none"></div>
 
     <div class="orb hero-orb-1 top-20 left-[10%] h-[500px] w-[500px] bg-primary-600/25"></div>
-    <div class="orb hero-orb-2 top-40 right-[5%] h-[400px] w-[400px] bg-cyan-400/15"></div>
+    <div class="orb hero-orb-2 top-40 right-[5%] h-[400px] w-[400px] bg-primary-500/15"></div>
 
     <div class="container-narrow relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col items-center text-center">
@@ -48,7 +48,7 @@
         <div class="hero-mockup relative mt-20 perspective-1000">
             <div class="hero-float-card absolute -left-4 top-1/4 z-20 hidden lg:block glass rounded-2xl p-4 shadow-2xl floating">
                 <div class="flex items-center gap-3">
-                    <div class="h-10 w-10 rounded-full bg-gradient-to-br from-cyan-400 to-primary-500 flex items-center justify-center">
+                    <div class="h-10 w-10 rounded-full bg-gradient-to-br from-primary-500 to-accent-gold flex items-center justify-center">
                         <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                     </div>
                     <div>
@@ -75,7 +75,7 @@
                     <span class="h-3 w-3 rounded-full bg-red-500/80"></span>
                     <span class="h-3 w-3 rounded-full bg-amber-500/80"></span>
                     <span class="h-3 w-3 rounded-full bg-emerald-500/80"></span>
-                    <span class="ml-4 flex-1 rounded-md bg-surface-900/50 px-3 py-1 text-xs text-slate-500">app.nexlearn.io/dashboard</span>
+                    <span class="ml-4 flex-1 rounded-md bg-surface-900/50 px-3 py-1 text-xs text-slate-500">app.braveia.io/dashboard</span>
                 </div>
                 <div class="rounded-b-xl bg-gradient-to-br from-surface-800 to-surface-900 p-6">
                     <div class="grid grid-cols-12 gap-4">

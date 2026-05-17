@@ -8,7 +8,7 @@
                 Ready to transform your <span class="text-gradient">learning platform</span>?
             </h2>
             <p class="mt-6 text-lg text-slate-400 max-w-xl mx-auto">
-                Join thousands of educators building the future of digital learning. Start your 14-day free trial today.
+                Join thousands of educators building the future of digital learning with BraveIA. Start your 14-day free trial today.
             </p>
             <form class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto" action="#" method="POST" @submit.prevent>
                 @csrf

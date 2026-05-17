@@ -21,7 +21,7 @@
             </div>
 
             <div class="relative reveal-scale floating" data-aos="fade-left">
-                <div class="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary-600/20 to-cyan-500/10 blur-2xl"></div>
+                <div class="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary-600/20 to-primary-500/10 blur-2xl"></div>
                 <div class="relative rounded-2xl border border-white/10 bg-surface-800/90 p-6 shadow-2xl backdrop-blur-xl">
                     <div class="flex items-center justify-between mb-6">
                         <h3 class="font-display font-semibold text-white">Analytics Overview</h3>
@@ -43,7 +43,7 @@
                         <p class="text-xs text-slate-500 mb-3">Weekly Activity</p>
                         <div class="flex items-end gap-1.5 h-24">
                             @foreach([30, 55, 40, 75, 50, 90, 65, 80, 45, 95, 70, 85] as $h)
-                                <div class="chart-bar flex-1 rounded-t bg-gradient-to-t from-primary-600/80 to-cyan-400/60" style="height: {{ $h }}%"></div>
+                                <div class="chart-bar flex-1 rounded-t bg-gradient-to-t from-primary-700/90 to-primary-400/80" style="height: {{ $h }}%"></div>
                             @endforeach
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                         <p class="text-xs text-slate-500">Recent Activity</p>
                         @foreach([['Sarah M.', 'Completed ML Module 4', '2m'], ['Alex R.', 'Started Live Class', '15m'], ['Maya P.', 'Earned Certificate', '1h']] as [$name, $action, $time])
                             <div class="flex items-center gap-3 rounded-lg bg-white/5 p-3">
-                                <div class="h-8 w-8 rounded-full bg-gradient-to-br from-primary-500 to-indigo-500 flex items-center justify-center text-xs font-bold text-white">{{ substr($name, 0, 1) }}</div>
+                                <div class="h-8 w-8 rounded-full bg-gradient-to-br from-primary-600 to-primary-400 flex items-center justify-center text-xs font-bold text-surface-900">{{ substr($name, 0, 1) }}</div>
                                 <div class="flex-1 min-w-0">
                                     <p class="text-sm font-medium text-white truncate">{{ $name }}</p>
                                     <p class="text-xs text-slate-500 truncate">{{ $action }}</p>

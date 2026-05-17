@@ -14,10 +14,10 @@
                 role="switch"
                 :aria-checked="yearly"
             >
-                <span class="absolute top-1 left-1 h-6 w-6 rounded-full bg-gradient-to-r from-primary-600 to-indigo-500 transition-transform duration-300" :class="yearly ? 'translate-x-6' : ''"></span>
+                <span class="absolute top-1 left-1 h-6 w-6 rounded-full bg-gradient-to-r from-primary-600 to-accent-gold transition-transform duration-300" :class="yearly ? 'translate-x-6' : ''"></span>
             </button>
             <span class="text-sm" :class="yearly ? 'text-white' : 'text-slate-500'">Yearly</span>
-            <x-ui.badge variant="cyan">Save 20%</x-ui.badge>
+            <x-ui.badge variant="gold">Save 20%</x-ui.badge>
         </div>
 
         <div class="mt-12 grid md:grid-cols-3 gap-6 lg:gap-8">
@@ -28,7 +28,7 @@
                     data-aos-delay="{{ $loop->index * 100 }}"
                 >
                     @if($plan['popular'])
-                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary-600 to-indigo-500 px-4 py-1 text-xs font-semibold text-white shadow-lg shadow-primary-600/40">Most Popular</span>
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary-600 to-accent-gold px-4 py-1 text-xs font-semibold text-surface-900 shadow-lg shadow-primary-500/40">Most Popular</span>
                     @endif
                     <h3 class="font-display text-xl font-bold text-white">{{ $plan['name'] }}</h3>
                     <p class="mt-2 text-sm text-slate-500">{{ $plan['description'] }}</p>

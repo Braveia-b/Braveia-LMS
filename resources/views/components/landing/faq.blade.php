@@ -3,7 +3,7 @@
         <x-ui.section-heading
             badge="FAQ"
             title='Frequently asked <span class="text-gradient">questions</span>'
-            subtitle="Everything you need to know about NexLearn."
+            subtitle="Everything you need to know about BraveIA."
         />
 
         <div class="mt-12 space-y-3" x-data="{ open: null }">

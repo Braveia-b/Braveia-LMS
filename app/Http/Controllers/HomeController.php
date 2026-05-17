@@ -10,8 +10,8 @@ class HomeController extends Controller
     {
         return view('landing.index', [
             'meta' => [
-                'title' => 'NexLearn — AI-Powered Learning Management System',
-                'description' => 'Transform learning into interactive digital experiences with NexLearn. Premium LMS platform with AI assistant, live classes, analytics, and more.',
+                'title' => 'BraveIA — AI-Powered Learning Management System',
+                'description' => 'Transform learning into interactive digital experiences with BraveIA. Premium LMS platform with AI assistant, live classes, analytics, and more.',
                 'keywords' => 'LMS, learning management system, online courses, AI education, e-learning platform',
             ],
             'stats' => [
@@ -79,7 +79,7 @@ class HomeController extends Controller
                     'students' => '12.4K',
                     'progress' => 68,
                     'category' => 'AI & Data',
-                    'color' => 'from-violet-600 to-indigo-600',
+                    'color' => 'from-surface-700 to-primary-600',
                 ],
                 [
                     'title' => 'Full-Stack Web Development',
@@ -88,7 +88,7 @@ class HomeController extends Controller
                     'students' => '18.2K',
                     'progress' => 45,
                     'category' => 'Development',
-                    'color' => 'from-cyan-500 to-blue-600',
+                    'color' => 'from-accent-navy to-primary-500',
                 ],
                 [
                     'title' => 'UI/UX Design Masterclass',
@@ -97,7 +97,7 @@ class HomeController extends Controller
                     'students' => '9.8K',
                     'progress' => 82,
                     'category' => 'Design',
-                    'color' => 'from-fuchsia-500 to-purple-600',
+                    'color' => 'from-primary-700 to-primary-400',
                 ],
                 [
                     'title' => 'Digital Marketing Strategy',
@@ -106,7 +106,7 @@ class HomeController extends Controller
                     'students' => '7.1K',
                     'progress' => 33,
                     'category' => 'Business',
-                    'color' => 'from-amber-500 to-orange-600',
+                    'color' => 'from-primary-600 to-accent-gold',
                 ],
             ],
             'testimonials' => [
@@ -114,7 +114,7 @@ class HomeController extends Controller
                     'name' => 'Elena Rodriguez',
                     'role' => 'CEO, EduTech Global',
                     'avatar' => 'ER',
-                    'content' => 'NexLearn transformed how we deliver corporate training. The AI assistant alone saved our team 40 hours per week.',
+                    'content' => 'BraveIA transformed how we deliver corporate training. The AI assistant alone saved our team 40 hours per week.',
                     'rating' => 5,
                 ],
                 [
@@ -167,8 +167,8 @@ class HomeController extends Controller
             ],
             'faqs' => [
                 [
-                    'question' => 'What makes NexLearn different from other LMS platforms?',
-                    'answer' => 'NexLearn combines cutting-edge AI personalization with a premium, intuitive interface. Our platform adapts to each learner while giving instructors powerful analytics and automation tools.',
+                    'question' => 'What makes BraveIA different from other LMS platforms?',
+                    'answer' => 'BraveIA combines cutting-edge AI personalization with a premium, intuitive interface. Our platform adapts to each learner while giving instructors powerful analytics and automation tools.',
                 ],
                 [
                     'question' => 'Can I migrate from my existing LMS?',
@@ -179,7 +179,7 @@ class HomeController extends Controller
                     'answer' => 'Absolutely. Start with a 14-day free trial on any plan — no credit card required. Experience the full platform before committing.',
                 ],
                 [
-                    'question' => 'Does NexLearn support live virtual classrooms?',
+                    'question' => 'Does BraveIA support live virtual classrooms?',
                     'answer' => 'Yes. Built-in live classes include video, screen sharing, breakout rooms, interactive whiteboard, and automatic attendance tracking.',
                 ],
                 [

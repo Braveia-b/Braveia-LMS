@@ -3,7 +3,7 @@
         <x-ui.section-heading
             badge="Testimonials"
             title='Loved by <span class="text-gradient">educators worldwide</span>'
-            subtitle="See what leaders in education and corporate training say about NexLearn."
+            subtitle="See what leaders in education and corporate training say about BraveIA."
         />
 
         <div class="swiper testimonials-swiper mt-16 !pb-12">
@@ -18,7 +18,7 @@
                             </div>
                             <p class="text-slate-300 leading-relaxed flex-1">"{{ $item['content'] }}"</p>
                             <footer class="mt-6 flex items-center gap-4 pt-6 border-t border-white/10">
-                                <div class="h-12 w-12 rounded-full bg-gradient-to-br from-primary-600 to-indigo-500 flex items-center justify-center font-display font-bold text-white">{{ $item['avatar'] }}</div>
+                                <div class="h-12 w-12 rounded-full bg-gradient-to-br from-primary-600 to-accent-gold flex items-center justify-center font-display font-bold text-surface-900">{{ $item['avatar'] }}</div>
                                 <div>
                                     <cite class="not-italic font-display font-semibold text-white">{{ $item['name'] }}</cite>
                                     <p class="text-sm text-slate-500">{{ $item['role'] }}</p>

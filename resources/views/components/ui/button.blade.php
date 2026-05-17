@@ -13,7 +13,7 @@ $sizes = [
     'lg' => 'px-8 py-4 text-base',
 ];
 $variants = [
-    'primary' => 'btn-glow magnetic-btn bg-gradient-to-r from-primary-600 via-primary-500 to-accent-indigo text-white hover:shadow-lg hover:shadow-primary-600/30 hover:scale-[1.02]',
+    'primary' => 'btn-glow magnetic-btn bg-gradient-to-r from-primary-700 via-primary-500 to-accent-gold text-surface-900 font-semibold hover:shadow-lg hover:shadow-primary-500/35 hover:scale-[1.02]',
     'secondary' => 'glass magnetic-btn text-slate-200 hover:bg-white/10 hover:border-white/20',
     'ghost' => 'text-slate-300 hover:text-white hover:bg-white/5',
     'outline' => 'border border-white/20 text-slate-200 hover:bg-white/5 hover:border-primary-500/50',

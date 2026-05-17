@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $meta['title'] ?? 'NexLearn LMS' }}</title>
+    <title>{{ $meta['title'] ?? 'BraveIA LMS' }}</title>
     <meta name="description" content="{{ $meta['description'] ?? '' }}">
     <meta name="keywords" content="{{ $meta['keywords'] ?? '' }}">
-    <meta name="author" content="NexLearn">
+    <meta name="author" content="BraveIA">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url('/') }}">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url('/') }}">
-    <meta property="og:title" content="{{ $meta['title'] ?? 'NexLearn LMS' }}">
+    <meta property="og:title" content="{{ $meta['title'] ?? 'BraveIA LMS' }}">
     <meta property="og:description" content="{{ $meta['description'] ?? '' }}">
     <meta property="og:locale" content="{{ app()->getLocale() }}">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $meta['title'] ?? 'NexLearn LMS' }}">
+    <meta name="twitter:title" content="{{ $meta['title'] ?? 'BraveIA LMS' }}">
     <meta name="twitter:description" content="{{ $meta['description'] ?? '' }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,14 +37,14 @@
                 <div class="absolute inset-0 rounded-full border-2 border-primary-500/30"></div>
                 <div class="absolute inset-0 rounded-full border-2 border-t-primary-500 animate-spin"></div>
             </div>
-            <p class="font-display text-sm font-medium tracking-widest text-slate-400 uppercase">NexLearn</p>
+            <p class="font-display text-sm font-medium tracking-widest text-primary-400 uppercase">BraveIA</p>
         </div>
     </div>
 
     <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
         <div class="orb hero-orb-1 -top-32 left-1/4 h-96 w-96 bg-primary-600/20"></div>
-        <div class="orb -right-32 top-1/3 h-80 w-80 bg-cyan-400/10"></div>
-        <div class="orb bottom-0 left-1/3 h-72 w-72 bg-indigo-500/15"></div>
+        <div class="orb -right-32 top-1/3 h-80 w-80 bg-primary-500/15"></div>
+        <div class="orb bottom-0 left-1/3 h-72 w-72 bg-accent-navy/30"></div>
     </div>
 
     <div class="relative z-10">

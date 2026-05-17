@@ -38,7 +38,7 @@
                                     <span>{{ $course['progress'] }}% avg. progress</span>
                                 </div>
                                 <div class="mt-3 h-1.5 rounded-full bg-white/10 overflow-hidden">
-                                    <div class="h-full rounded-full bg-gradient-to-r from-primary-600 to-cyan-400 transition-all duration-500 group-hover:w-full" style="width: {{ $course['progress'] }}%"></div>
+                                    <div class="h-full rounded-full bg-gradient-to-r from-primary-700 to-accent-gold transition-all duration-500 group-hover:w-full" style="width: {{ $course['progress'] }}%"></div>
                                 </div>
                             </div>
                         </article>

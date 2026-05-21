@@ -1,83 +1,70 @@
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="<?= base_url('admin/dashboard') ?>" class="brand-link text-center">
-      <?php $logo_class = 'braveia-logo-admin'; $this->load->view('layout/_logo'); ?>
-    </a>
-
-    <div class="sidebar">
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="info">
-          <a href="#" class="d-block"><?= $this->session->userdata('name') ?></a>
-          <small class="text-success"><?= $this->session->userdata('role_name') ?></small>
-        </div>
-      </div>
-
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          
-          <li class="nav-item">
-            <a href="<?= base_url('admin/dashboard') ?>" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          
-          <li class="nav-header">MANAJEMEN KELAS</li>
-          <li class="nav-item">
-            <a href="<?= base_url('admin/training') ?>" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>Program Pelatihan</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?= base_url('admin/category') ?>" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
-              <p>Kategori Program</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-certificate"></i>
-              <p>Sertifikasi</p>
-            </a>
-          </li>
-
-          <li class="nav-header">MANAJEMEN WEBINAR</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-video"></i>
-              <p>Event & Webinar</p>
-            </a>
-          </li>
-
-          <li class="nav-header">PENGGUNA</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>Peserta</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="<?= base_url('admin/mentor') ?>" class="nav-link">
-              <i class="nav-icon fas fa-chalkboard-teacher"></i>
-              <p>Mentor</p>
-            </a>
-          </li>
-
-          <li class="nav-header">SISTEM</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-money-bill-wave"></i>
-              <p>Transaksi</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-cog"></i>
-              <p>Pengaturan</p>
-            </a>
-          </li>
-
-        </ul>
-      </nav>
+<?php
+$uri = $this->uri->uri_string();
+$nav_active = function ($segment) use ($uri) {
+    return strpos($uri, 'admin/' . $segment) === 0 ? 'active' : '';
+};
+?>
+<aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-brand">
+        <a href="<?= base_url('admin/dashboard') ?>">
+            <?php $logo_class = 'braveia-logo-admin'; $this->load->view('layout/_logo'); ?>
+        </a>
     </div>
-  </aside>
+
+    <div class="admin-sidebar-user">
+        <div class="user-name"><?= html_escape($this->session->userdata('name')) ?></div>
+        <div class="user-role"><?= html_escape($this->session->userdata('role_name')) ?></div>
+    </div>
+
+    <nav class="admin-nav">
+        <div class="admin-nav-section">Utama</div>
+        <a href="<?= base_url('admin/dashboard') ?>" class="admin-nav-link <?= $nav_active('dashboard') ?>">
+            <i class="fas fa-chart-line"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <div class="admin-nav-section">Manajemen Kelas</div>
+        <a href="<?= base_url('admin/training') ?>" class="admin-nav-link <?= $nav_active('training') ?>">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Program Pelatihan</span>
+        </a>
+        <a href="<?= base_url('admin/category') ?>" class="admin-nav-link <?= $nav_active('category') ?>">
+            <i class="fas fa-tags"></i>
+            <span>Kategori Program</span>
+        </a>
+        <a href="#" class="admin-nav-link">
+            <i class="fas fa-certificate"></i>
+            <span>Sertifikasi</span>
+        </a>
+
+        <div class="admin-nav-section">Webinar</div>
+        <a href="#" class="admin-nav-link">
+            <i class="fas fa-video"></i>
+            <span>Event & Webinar</span>
+        </a>
+
+        <div class="admin-nav-section">Pengguna</div>
+        <a href="#" class="admin-nav-link">
+            <i class="fas fa-users"></i>
+            <span>Peserta</span>
+        </a>
+        <a href="<?= base_url('admin/mentor') ?>" class="admin-nav-link <?= $nav_active('mentor') ?>">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Mentor</span>
+        </a>
+
+        <div class="admin-nav-section">Sistem</div>
+        <a href="#" class="admin-nav-link">
+            <i class="fas fa-receipt"></i>
+            <span>Transaksi</span>
+        </a>
+        <a href="#" class="admin-nav-link">
+            <i class="fas fa-cog"></i>
+            <span>Pengaturan</span>
+        </a>
+    </nav>
+
+    <div class="admin-sidebar-footer">
+        <a href="<?= base_url() ?>"><i class="fas fa-arrow-left me-1"></i> Kembali ke situs</a>
+    </div>
+</aside>

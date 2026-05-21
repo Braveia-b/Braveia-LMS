@@ -1,90 +1,67 @@
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Daftar Mentor</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Mentor</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
+<?php
+$page_title = 'Daftar Mentor';
+$breadcrumbs = [
+    ['label' => 'Beranda', 'url' => base_url('admin/dashboard')],
+    ['label' => 'Mentor'],
+];
+$page_actions = '<a href="' . base_url('admin/mentor/add') . '" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i> Tambah Mentor</a>';
+$this->load->view('admin/layout/_page_header');
+?>
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            
-            <?php if ($this->session->flashdata('success')): ?>
-                <div class="alert alert-success">
-                    <?= $this->session->flashdata('success') ?>
-                </div>
-            <?php endif; ?>
+<?php if ($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible fade show rounded-3" role="alert">
+        <?= $this->session->flashdata('success') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
 
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Daftar Mentor Terdaftar</h3>
-                    <div class="card-tools">
-                        <a href="<?= base_url('admin/mentor/add') ?>" class="btn btn-primary btn-sm">
-                            <i class="fas fa-plus"></i> Tambah Mentor Baru
-                        </a>
-                    </div>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <table class="table table-bordered table-striped">
-                        <thead>
+<div class="admin-panel">
+    <div class="admin-panel-header">
+        <h3>Mentor Terdaftar</h3>
+    </div>
+    <div class="admin-panel-body p-0">
+        <div class="table-responsive">
+            <table class="table admin-table mb-0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Lengkap</th>
+                        <th>Email</th>
+                        <th>Keahlian</th>
+                        <th>Tarif / Jam</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (!empty($mentors)): ?>
+                        <?php $no = 1; foreach ($mentors as $mentor): ?>
                             <tr>
-                                <th>No</th>
-                                <th>Nama Lengkap</th>
-                                <th>Email</th>
-                                <th>Keahlian</th>
-                                <th>Tarif / Jam</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
+                                <td><?= $no++ ?></td>
+                                <td class="fw-semibold"><?= html_escape($mentor->name) ?></td>
+                                <td><?= html_escape($mentor->email) ?></td>
+                                <td><?= html_escape($mentor->expertise) ?></td>
+                                <td>Rp <?= number_format($mentor->hourly_rate, 0, ',', '.') ?></td>
+                                <td>
+                                    <?php if ($mentor->is_active): ?>
+                                        <span class="badge bg-success">Aktif</span>
+                                    <?php else: ?>
+                                        <span class="badge bg-secondary">Nonaktif</span>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <a href="<?= base_url('admin/mentor/edit/' . $mentor->id) ?>" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= base_url('admin/mentor/delete/' . $mentor->id) ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Yakin ingin menghapus mentor ini beserta akunnya?');"><i class="fas fa-trash"></i></a>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (!empty($mentors)): ?>
-                                <?php $no=1; foreach($mentors as $mentor): ?>
-                                    <tr>
-                                        <td><?= $no++ ?></td>
-                                        <td><?= html_escape($mentor->name) ?></td>
-                                        <td><?= html_escape($mentor->email) ?></td>
-                                        <td><?= html_escape($mentor->expertise) ?></td>
-                                        <td>Rp <?= number_format($mentor->hourly_rate, 0, ',', '.') ?></td>
-                                        <td>
-                                            <?php if($mentor->is_active): ?>
-                                                <span class="badge badge-success">Aktif</span>
-                                            <?php else: ?>
-                                                <span class="badge badge-danger">Nonaktif</span>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td>
-                                            <a href="<?= base_url('admin/mentor/edit/' . $mentor->id) ?>" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
-                                            <a href="<?= base_url('admin/mentor/delete/' . $mentor->id) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus mentor ini beserta akunnya?');"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <tr>
-                                    <td colspan="7" class="text-center">Belum ada data mentor.</td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="7" class="text-center text-muted py-4">Belum ada data mentor.</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
         </div>
-    </section>
-    <!-- /.content -->
+    </div>
 </div>
-<!-- /.content-wrapper -->

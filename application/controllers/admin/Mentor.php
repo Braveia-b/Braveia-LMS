@@ -89,6 +89,12 @@ class Mentor extends CI_Controller {
     public function update($id)
     {
         $mentor = $this->Mentor_model->get_mentor_by_id($id);
+
+        if (!$mentor) {
+            $this->session->set_flashdata('error', 'Mentor tidak ditemukan.');
+            redirect('admin/mentor');
+            return;
+        }
         
         $this->load->library('form_validation');
         $this->form_validation->set_rules('name', 'Nama Lengkap', 'required');

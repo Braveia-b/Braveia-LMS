@@ -27,6 +27,8 @@ class Mentor_model extends CI_Model {
         $this->db->insert('mentors', $mentor_data);
 
         $this->db->trans_complete();
+        return $this->db->trans_status();
+    }
 
     public function get_mentor_by_id($id)
     {

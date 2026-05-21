@@ -1,88 +1,65 @@
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Kategori Program</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
-                        <li class="breadcrumb-item active">Kategori Program</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
+<?php
+$page_title = 'Kategori Program';
+$breadcrumbs = [
+    ['label' => 'Beranda', 'url' => base_url('admin/dashboard')],
+    ['label' => 'Kategori Program'],
+];
+$page_actions = '<a href="' . base_url('admin/category/add') . '" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i> Tambah Kategori</a>';
+$this->load->view('admin/layout/_page_header');
+?>
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            
-            <?php if ($this->session->flashdata('success')): ?>
-                <div class="alert alert-success">
-                    <?= $this->session->flashdata('success') ?>
-                </div>
-            <?php endif; ?>
+<?php if ($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible fade show rounded-3" role="alert">
+        <?= $this->session->flashdata('success') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
 
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Daftar Kategori</h3>
-                    <div class="card-tools">
-                        <a href="<?= base_url('admin/category/add') ?>" class="btn btn-primary btn-sm">
-                            <i class="fas fa-plus"></i> Tambah Kategori
-                        </a>
-                    </div>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <table class="table table-bordered table-striped">
-                        <thead>
+<div class="admin-panel">
+    <div class="admin-panel-header">
+        <h3>Daftar Kategori</h3>
+    </div>
+    <div class="admin-panel-body p-0">
+        <div class="table-responsive">
+            <table class="table admin-table mb-0">
+                <thead>
+                    <tr>
+                        <th width="5%">No</th>
+                        <th width="10%">Ikon</th>
+                        <th width="22%">Nama Kategori</th>
+                        <th width="18%">Slug</th>
+                        <th>Deskripsi</th>
+                        <th width="14%">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (!empty($categories)): ?>
+                        <?php $no = 1; foreach ($categories as $cat): ?>
                             <tr>
-                                <th width="5%">No</th>
-                                <th width="10%">Ikon</th>
-                                <th width="25%">Nama Kategori</th>
-                                <th width="20%">Slug</th>
-                                <th>Deskripsi</th>
-                                <th width="15%">Aksi</th>
+                                <td><?= $no++ ?></td>
+                                <td class="text-center">
+                                    <?php if ($cat->icon): ?>
+                                        <i class="<?= html_escape($cat->icon) ?> fa-lg text-primary"></i>
+                                    <?php else: ?>
+                                        <span class="text-muted">—</span>
+                                    <?php endif; ?>
+                                </td>
+                                <td class="fw-semibold"><?= html_escape($cat->name) ?></td>
+                                <td><code><?= html_escape($cat->slug) ?></code></td>
+                                <td class="text-muted"><?= html_escape($cat->description) ?></td>
+                                <td>
+                                    <a href="<?= base_url('admin/category/edit/' . $cat->id) ?>" class="btn btn-sm btn-outline-primary" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= base_url('admin/category/delete/' . $cat->id) ?>" class="btn btn-sm btn-outline-danger" title="Hapus" onclick="return confirm('Yakin ingin menghapus kategori ini?');"><i class="fas fa-trash"></i></a>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (!empty($categories)): ?>
-                                <?php $no=1; foreach($categories as $cat): ?>
-                                    <tr>
-                                        <td><?= $no++ ?></td>
-                                        <td class="text-center">
-                                            <?php if($cat->icon): ?>
-                                                <i class="<?= html_escape($cat->icon) ?> fa-2x"></i>
-                                            <?php else: ?>
-                                                -
-                                            <?php endif; ?>
-                                        </td>
-                                        <td><?= html_escape($cat->name) ?></td>
-                                        <td><code><?= html_escape($cat->slug) ?></code></td>
-                                        <td><?= html_escape($cat->description) ?></td>
-                                        <td>
-                                            <a href="<?= base_url('admin/category/edit/' . $cat->id) ?>" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
-                                            <a href="<?= base_url('admin/category/delete/' . $cat->id) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus kategori ini?');"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <tr>
-                                    <td colspan="6" class="text-center">Belum ada data kategori.</td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="6" class="text-center text-muted py-4">Belum ada data kategori.</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
         </div>
-    </section>
-    <!-- /.content -->
+    </div>
 </div>
-<!-- /.content-wrapper -->

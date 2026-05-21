@@ -1,0 +1,298 @@
+/**
+ * Brave International Academy — Brand Theme
+ * Gold & black palette aligned with official logo
+ */
+:root {
+    --braveia-black: #0a0a0a;
+    --braveia-charcoal: #121212;
+    --braveia-surface: #1a1a1a;
+    --braveia-gold: #c5a028;
+    --braveia-gold-light: #e8c96a;
+    --braveia-gold-highlight: #f9e498;
+    --braveia-gold-dark: #8b7018;
+    --braveia-muted: #9a9a9a;
+    --braveia-border: rgba(197, 160, 40, 0.25);
+
+    --bs-primary: #c5a028;
+    --bs-primary-rgb: 197, 160, 40;
+    --bs-link-color: #c5a028;
+    --bs-link-hover-color: #e8c96a;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f5f3ee;
+    color: #2c2c2c;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-serif {
+    font-family: 'Cinzel', 'Playfair Display', serif;
+    letter-spacing: 0.02em;
+}
+
+/* Logo */
+.braveia-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+.braveia-logo-lg {
+    height: 120px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.braveia-logo-footer {
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Navbar */
+.navbar-braveia {
+    background: var(--braveia-black) !important;
+    border-bottom: 1px solid var(--braveia-border);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-braveia .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar-braveia .nav-link:hover,
+.navbar-braveia .nav-link:focus {
+    color: var(--braveia-gold-light) !important;
+}
+
+.navbar-braveia .navbar-toggler {
+    border-color: var(--braveia-border);
+}
+
+.navbar-braveia .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.navbar-braveia .btn-outline-primary {
+    color: var(--braveia-gold-light);
+    border-color: var(--braveia-gold);
+}
+
+.navbar-braveia .btn-outline-primary:hover {
+    background: var(--braveia-gold);
+    color: var(--braveia-black);
+}
+
+.navbar-braveia .btn-outline-light:hover {
+    border-color: var(--braveia-gold-light);
+    color: var(--braveia-gold-light);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--braveia-gold-light) 0%, var(--braveia-gold) 50%, var(--braveia-gold-dark) 100%);
+    border: 1px solid var(--braveia-gold-dark);
+    color: var(--braveia-black);
+    font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: linear-gradient(135deg, var(--braveia-gold-highlight) 0%, var(--braveia-gold-light) 100%);
+    border-color: var(--braveia-gold);
+    color: var(--braveia-black);
+    box-shadow: 0 4px 16px rgba(197, 160, 40, 0.35);
+}
+
+.btn-outline-primary {
+    color: var(--braveia-gold);
+    border-color: var(--braveia-gold);
+}
+
+.btn-outline-primary:hover {
+    background: var(--braveia-gold);
+    border-color: var(--braveia-gold);
+    color: var(--braveia-black);
+}
+
+.text-primary {
+    color: var(--braveia-gold) !important;
+}
+
+.bg-primary {
+    background-color: var(--braveia-gold) !important;
+}
+
+.border-primary {
+    border-color: var(--braveia-gold) !important;
+}
+
+.badge.bg-primary {
+    background: linear-gradient(135deg, var(--braveia-gold-light), var(--braveia-gold)) !important;
+    color: var(--braveia-black) !important;
+}
+
+/* Hero */
+.hero-section {
+    background: linear-gradient(160deg, var(--braveia-black) 0%, var(--braveia-charcoal) 45%, #1f1a12 100%);
+    color: #fff;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--braveia-gold), transparent);
+}
+
+.hero-section h1 {
+    font-weight: 600;
+    font-size: 2.75rem;
+    color: var(--braveia-gold-highlight);
+}
+
+.hero-section .hero-tagline {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+}
+
+.hero-section .stat-value {
+    color: var(--braveia-gold-light);
+    font-family: 'Cinzel', serif;
+}
+
+.hero-divider {
+    border-color: var(--braveia-border) !important;
+}
+
+.btn-hero-primary {
+    background: linear-gradient(135deg, var(--braveia-gold-highlight), var(--braveia-gold));
+    color: var(--braveia-black);
+    font-weight: 700;
+    border: none;
+}
+
+.btn-hero-primary:hover {
+    color: var(--braveia-black);
+    box-shadow: 0 6px 24px rgba(197, 160, 40, 0.4);
+}
+
+.btn-hero-outline {
+    border: 1px solid var(--braveia-gold);
+    color: var(--braveia-gold-light);
+}
+
+.btn-hero-outline:hover {
+    background: rgba(197, 160, 40, 0.15);
+    color: var(--braveia-gold-highlight);
+    border-color: var(--braveia-gold-light);
+}
+
+/* Cards */
+.course-card {
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(197, 160, 40, 0.12);
+    border-color: var(--braveia-border);
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 2px;
+    margin: 0.5rem auto 0;
+    background: linear-gradient(90deg, transparent, var(--braveia-gold), transparent);
+}
+
+/* Auth */
+.auth-card {
+    border: 1px solid var(--braveia-border) !important;
+    overflow: hidden;
+}
+
+.auth-card-header {
+    background: var(--braveia-black);
+    padding: 2rem 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--braveia-border);
+}
+
+.auth-page {
+    background: linear-gradient(180deg, #ebe8e0 0%, #f5f3ee 100%);
+    min-height: calc(100vh - 200px);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--braveia-gold);
+    box-shadow: 0 0 0 0.2rem rgba(197, 160, 40, 0.2);
+}
+
+/* Footer */
+footer.site-footer {
+    background: var(--braveia-black);
+    color: #fff;
+    padding: 48px 0 32px;
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(90deg, transparent, var(--braveia-gold), transparent) 1;
+}
+
+footer.site-footer a:hover {
+    color: var(--braveia-gold-light) !important;
+}
+
+footer .footer-divider {
+    border-color: var(--braveia-border) !important;
+}
+
+/* AI / feature accents */
+.feature-badge {
+    color: var(--braveia-gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.ai-feature-card {
+    border: 1px solid var(--braveia-border) !important;
+    background: #fff;
+}
+
+.dashboard-ai-card {
+    background: linear-gradient(135deg, var(--braveia-charcoal) 0%, #2a2418 100%) !important;
+    border: 1px solid var(--braveia-border) !important;
+}
+
+.dashboard-ai-card h4,
+.dashboard-ai-card p {
+    color: #fff !important;
+}
+
+.dashboard-ai-card .badge {
+    background: var(--braveia-gold) !important;
+    color: var(--braveia-black) !important;
+}

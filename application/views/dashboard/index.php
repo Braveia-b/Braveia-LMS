@@ -1,7 +1,7 @@
 <div class="container py-5 mt-4">
     <div class="row mb-4 align-items-center">
         <div class="col-md-8">
-            <h2 class="fw-bold">Selamat Datang, <?= $this->session->userdata('name') ?>! 👋</h2>
+            <h2 class="fw-bold font-serif">Selamat Datang, <?= $this->session->userdata('name') ?>! 👋</h2>
             <p class="text-muted">Lanjutkan progres belajarmu dan capai target karirmu hari ini.</p>
         </div>
         <div class="col-md-4 text-md-end">
@@ -12,15 +12,15 @@
     <div class="row g-4 mb-5">
         <!-- AI Recommendation Card -->
         <div class="col-md-12">
-            <div class="card border-0 rounded-4 shadow-sm" style="background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);">
-                <div class="card-body p-4 d-flex align-items-center justify-content-between">
+            <div class="card border-0 rounded-4 shadow-sm dashboard-ai-card">
+                <div class="card-body p-4 d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3">
                     <div>
-                        <span class="badge bg-white text-primary mb-2">AI Recommendation</span>
-                        <h4 class="fw-bold text-dark">Berdasarkan Minat Anda</h4>
-                        <p class="mb-0 text-dark opacity-75">Kami menyarankan Anda mengambil "Advanced UI/UX dengan AI Tools". Skill ini sangat cocok dengan profil Anda.</p>
+                        <span class="badge mb-2">AI Recommendation</span>
+                        <h4 class="fw-bold font-serif">Berdasarkan Minat Anda</h4>
+                        <p class="mb-0 opacity-75">Kami menyarankan Anda mengambil "Advanced UI/UX dengan AI Tools". Skill ini sangat cocok dengan profil Anda.</p>
                     </div>
                     <div>
-                        <a href="#" class="btn btn-dark fw-bold px-4">Lihat Detail</a>
+                        <a href="#" class="btn btn-primary fw-bold px-4">Lihat Detail</a>
                     </div>
                 </div>
             </div>

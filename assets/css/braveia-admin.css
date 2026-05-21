@@ -1,0 +1,97 @@
+/**
+ * AdminLTE overrides — Brave International Academy brand
+ */
+:root {
+    --braveia-gold: #c5a028;
+    --braveia-gold-light: #e8c96a;
+    --braveia-black: #0a0a0a;
+    --braveia-charcoal: #121212;
+}
+
+.main-sidebar.sidebar-dark-primary {
+    background-color: var(--braveia-black) !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active:hover {
+    background: linear-gradient(135deg, var(--braveia-gold-light), var(--braveia-gold)) !important;
+    color: var(--braveia-black) !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link:hover {
+    background-color: rgba(197, 160, 40, 0.15) !important;
+    color: var(--braveia-gold-light) !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.sidebar-dark-primary .nav-header {
+    color: var(--braveia-gold) !important;
+    letter-spacing: 0.06em;
+    font-size: 0.7rem;
+}
+
+.brand-link {
+    border-bottom: 1px solid rgba(197, 160, 40, 0.25) !important;
+    background: var(--braveia-black) !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px !important;
+}
+
+.brand-link .braveia-logo-admin {
+    height: 56px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.sidebar-dark-primary .user-panel,
+.sidebar-dark-primary .user-panel .info a {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.sidebar-dark-primary .user-panel .text-success {
+    color: var(--braveia-gold-light) !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #e8c96a, #c5a028) !important;
+    border-color: #8b7018 !important;
+    color: #0a0a0a !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #f9e498, #e8c96a) !important;
+    color: #0a0a0a !important;
+}
+
+.card-primary.card-outline,
+.card-outline.card-primary {
+    border-top-color: var(--braveia-gold) !important;
+}
+
+.card-primary .card-header {
+    background: var(--braveia-charcoal) !important;
+    color: var(--braveia-gold-light) !important;
+    border-bottom-color: rgba(197, 160, 40, 0.25) !important;
+}
+
+a {
+    color: var(--braveia-gold-dark, #8b7018);
+}
+
+a:hover {
+    color: var(--braveia-gold);
+}
+
+.main-header.navbar-light {
+    border-bottom: 1px solid rgba(197, 160, 40, 0.2);
+}
+
+.content-wrapper {
+    background: #f5f3ee;
+}

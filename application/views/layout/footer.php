@@ -1,52 +1,52 @@
-<footer>
+<footer class="site-footer">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-start">
             <div class="col-md-4 mb-4">
-                <h4 class="mb-3 text-white">Braveia.</h4>
-                <p class="text-secondary">Platform e-learning dan sertifikasi profesional masa kini. Menggabungkan AI dan metodologi pembelajaran terbaik untuk karir Anda.</p>
+                <a href="<?= base_url() ?>" class="d-inline-block mb-3">
+                    <?php $logo_class = 'braveia-logo-footer'; $this->load->view('layout/_logo'); ?>
+                </a>
+                <p class="text-secondary small">Brave International Academy — platform e-learning dan sertifikasi profesional. Menggabungkan AI dan metodologi pembelajaran terbaik untuk karir Anda.</p>
                 <div class="d-flex gap-3 mt-3">
-                    <a href="#" class="text-white"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="text-secondary"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-secondary"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-secondary"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
                 </div>
             </div>
             <div class="col-md-2 mb-4">
-                <h5 class="text-white">Perusahaan</h5>
+                <h5 class="text-white font-serif mb-3" style="font-size: 1rem;">Perusahaan</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-secondary text-decoration-none">Tentang Kami</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Karir</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Kontak</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none small">Tentang Kami</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none small">Karir</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none small">Kontak</a></li>
                 </ul>
             </div>
             <div class="col-md-3 mb-4">
-                <h5 class="text-white">Layanan</h5>
+                <h5 class="text-white font-serif mb-3" style="font-size: 1rem;">Layanan</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-secondary text-decoration-none">Program Pelatihan</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Sertifikasi</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Webinar</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Mentoring</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none small">Program Pelatihan</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none small">Sertifikasi</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none small">Webinar</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none small">Mentoring</a></li>
                 </ul>
             </div>
             <div class="col-md-3 mb-4">
-                <h5 class="text-white">Bantuan</h5>
+                <h5 class="text-white font-serif mb-3" style="font-size: 1rem;">Bantuan</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-secondary text-decoration-none">FAQ</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Syarat & Ketentuan</a></li>
-                    <li><a href="#" class="text-secondary text-decoration-none">Kebijakan Privasi</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none small">FAQ</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none small">Syarat & Ketentuan</a></li>
+                    <li class="mb-2"><a href="#" class="text-secondary text-decoration-none small">Kebijakan Privasi</a></li>
                 </ul>
             </div>
         </div>
-        <hr class="border-secondary">
-        <div class="text-center text-secondary">
-            <p class="mb-0">&copy; <?= date('Y') ?> Braveia. Hak Cipta Dilindungi.</p>
+        <hr class="footer-divider">
+        <div class="text-center text-secondary small">
+            <p class="mb-0">&copy; <?= date('Y') ?> Brave International Academy. Hak Cipta Dilindungi.</p>
         </div>
     </div>
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- jQuery (Jika diperlukan untuk fitur custom Ajax) -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 </html>

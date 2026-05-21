@@ -1,13 +1,9 @@
-  <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="<?= base_url('admin/dashboard') ?>" class="brand-link">
-      <span class="brand-text font-weight-light pl-3 fw-bold">Braveia Admin</span>
+    <a href="<?= base_url('admin/dashboard') ?>" class="brand-link text-center">
+      <?php $logo_class = 'braveia-logo-admin'; $this->load->view('layout/_logo'); ?>
     </a>
 
-    <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
           <a href="#" class="d-block"><?= $this->session->userdata('name') ?></a>
@@ -15,7 +11,6 @@
         </div>
       </div>
 
-      <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           
@@ -84,7 +79,5 @@
 
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
   </aside>

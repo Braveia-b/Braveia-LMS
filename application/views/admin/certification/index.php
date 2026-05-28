@@ -114,14 +114,3 @@ $this->load->view('admin/layout/_page_header');
     </div>
 </div>
 
-<div class="admin-panel">
-    <div class="admin-panel-header">
-        <h3>Manajemen Sertifikasi</h3>
-    </div>
-    <div class="admin-panel-body">
-        <div class="alert alert-warning rounded-3 mb-0">
-            Halaman ini sudah aktif. Berikutnya kita bisa isi fitur: template sertifikat, penerbitan sertifikat, dan validasi.
-        </div>
-    </div>
-</div>
-

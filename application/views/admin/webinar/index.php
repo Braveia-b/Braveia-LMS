@@ -54,7 +54,16 @@ $this->load->view('admin/layout/_page_header');
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>
-                        <tr><td colspan="6" class="text-center text-muted py-4">Belum ada webinar.</td></tr>
+                        <tr>
+                            <td colspan="6" class="text-center text-muted py-4">
+                                Belum ada webinar.
+                                <div class="mt-3">
+                                    <a href="<?= base_url('admin/webinar/add') ?>" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-plus me-1"></i> Buat Webinar Pertama
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
                     <?php endif; ?>
                 </tbody>
             </table>

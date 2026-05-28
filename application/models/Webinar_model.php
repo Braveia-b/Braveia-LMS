@@ -26,6 +26,40 @@ class Webinar_model extends CI_Model {
         return $this->db->get_where('webinars', ['id' => (int)$id])->row();
     }
 
+    public function get_public_detail($id)
+    {
+        if (!$this->db->table_exists('webinars')) return null;
+        $this->db->select('webinars.*, users.name AS speaker_name, users.email AS speaker_email');
+        $this->db->from('webinars');
+        $this->db->join('users', 'users.id = webinars.speaker_id', 'left');
+        $this->db->where('webinars.id', (int) $id);
+        return $this->db->get()->row();
+    }
+
+    public function get_upcoming($limit = 20)
+    {
+        if (!$this->db->table_exists('webinars')) return [];
+        $this->db->select('webinars.*, users.name AS speaker_name');
+        $this->db->from('webinars');
+        $this->db->join('users', 'users.id = webinars.speaker_id', 'left');
+        $this->db->where('webinars.schedule_datetime >=', date('Y-m-d H:i:s'));
+        $this->db->order_by('webinars.schedule_datetime', 'ASC');
+        $this->db->limit((int) $limit);
+        return $this->db->get()->result();
+    }
+
+    public function get_past($limit = 12)
+    {
+        if (!$this->db->table_exists('webinars')) return [];
+        $this->db->select('webinars.*, users.name AS speaker_name');
+        $this->db->from('webinars');
+        $this->db->join('users', 'users.id = webinars.speaker_id', 'left');
+        $this->db->where('webinars.schedule_datetime <', date('Y-m-d H:i:s'));
+        $this->db->order_by('webinars.schedule_datetime', 'DESC');
+        $this->db->limit((int) $limit);
+        return $this->db->get()->result();
+    }
+
     public function insert($data)
     {
         return $this->db->insert('webinars', $data);

@@ -12,6 +12,16 @@ class Mentor_model extends CI_Model {
         return $this->db->get()->result();
     }
 
+    public function get_public_mentors()
+    {
+        $this->db->select('mentors.*, users.name, users.email, users.avatar, users.bio');
+        $this->db->from('mentors');
+        $this->db->join('users', 'users.id = mentors.user_id');
+        $this->db->where('users.is_active', 1);
+        $this->db->order_by('users.name', 'ASC');
+        return $this->db->get()->result();
+    }
+
     public function insert_mentor($user_data, $mentor_data)
     {
         $this->db->trans_start();

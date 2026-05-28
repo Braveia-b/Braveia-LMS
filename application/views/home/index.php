@@ -8,25 +8,32 @@
         <p class="hero-tagline mb-5 mx-auto" style="max-width: 640px;">Platform e-learning bersertifikasi dan bimbingan mentor profesional berbasis AI recommendation.</p>
         <div class="d-flex flex-wrap justify-content-center gap-3">
             <a href="<?= base_url('courses') ?>" class="btn btn-hero-primary btn-lg px-4 py-3">Mulai Belajar</a>
-            <a href="<?= base_url('about') ?>" class="btn btn-hero-outline btn-lg px-4 py-3">Jelajahi Program</a>
+            <a href="<?= base_url('courses') ?>" class="btn btn-hero-outline btn-lg px-4 py-3">Jelajahi Program</a>
         </div>
         
+        <?php
+        $st = isset($stats) ? $stats : ['trainings' => 0, 'mentors' => 0, 'participants' => 0];
+        $fmt = function ($n) {
+            if ($n >= 1000) return number_format($n / 1000, 0) . 'K+';
+            return $n > 0 ? $n . '+' : '—';
+        };
+        ?>
         <div class="row mt-5 pt-4 hero-divider border-top text-white">
             <div class="col-md-3 col-6 mb-3">
-                <h3 class="fw-bold stat-value">150+</h3>
-                <p class="small opacity-75">Modul Pelatihan</p>
+                <h3 class="fw-bold stat-value"><?= $fmt($st['trainings']) ?></h3>
+                <p class="small opacity-75">Program Aktif</p>
             </div>
             <div class="col-md-3 col-6 mb-3">
-                <h3 class="fw-bold stat-value">50+</h3>
+                <h3 class="fw-bold stat-value"><?= $fmt($st['mentors']) ?></h3>
                 <p class="small opacity-75">Mentor Ahli</p>
             </div>
             <div class="col-md-3 col-6 mb-3">
-                <h3 class="fw-bold stat-value">10K+</h3>
+                <h3 class="fw-bold stat-value"><?= $fmt($st['participants']) ?></h3>
                 <p class="small opacity-75">Peserta Aktif</p>
             </div>
             <div class="col-md-3 col-6 mb-3">
-                <h3 class="fw-bold stat-value">98%</h3>
-                <p class="small opacity-75">Tingkat Kelulusan</p>
+                <h3 class="fw-bold stat-value"><i class="fas fa-award"></i></h3>
+                <p class="small opacity-75">Sertifikasi Resmi</p>
             </div>
         </div>
     </div>
@@ -40,52 +47,17 @@
             <p class="text-muted mt-4">Pelajari keahlian yang paling dicari di industri saat ini.</p>
         </div>
         
+        <?php if (!empty($popular_trainings)): ?>
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card course-card h-100">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" class="card-img-top" alt="Course Image" style="height: 200px; object-fit: cover;">
-                    <div class="card-body d-flex flex-column">
-                        <span class="badge bg-primary bg-opacity-10 text-primary mb-2 align-self-start">Programming</span>
-                        <h5 class="card-title fw-bold font-serif">Fullstack Web Development</h5>
-                        <p class="card-text text-muted small">Pelajari cara membangun aplikasi web modern dari nol hingga mahir menggunakan React dan Node.js.</p>
-                        <div class="mt-auto pt-3 d-flex justify-content-between align-items-center">
-                            <span class="fw-bold text-primary">Rp 499.000</span>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card course-card h-100">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" class="card-img-top" alt="Course Image" style="height: 200px; object-fit: cover;">
-                    <div class="card-body d-flex flex-column">
-                        <span class="badge bg-success bg-opacity-10 text-success mb-2 align-self-start">Data Science</span>
-                        <h5 class="card-title fw-bold font-serif">Data Analytics for Business</h5>
-                        <p class="card-text text-muted small">Kuasai teknik analisis data dan visualisasi menggunakan Python, SQL, dan Tableau.</p>
-                        <div class="mt-auto pt-3 d-flex justify-content-between align-items-center">
-                            <span class="fw-bold text-primary">Rp 399.000</span>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card course-card h-100">
-                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" class="card-img-top" alt="Course Image" style="height: 200px; object-fit: cover;">
-                    <div class="card-body d-flex flex-column">
-                        <span class="badge bg-warning bg-opacity-10 text-warning mb-2 align-self-start">UI/UX Design</span>
-                        <h5 class="card-title fw-bold font-serif">Professional UI/UX Masterclass</h5>
-                        <p class="card-text text-muted small">Pahami prinsip desain, user research, dan prototyping menggunakan Figma secara profesional.</p>
-                        <div class="mt-auto pt-3 d-flex justify-content-between align-items-center">
-                            <span class="fw-bold text-primary">Rp 349.000</span>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Detail</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php foreach ($popular_trainings as $training): ?>
+                <?php $this->load->view('courses/_card', ['training' => $training]); ?>
+            <?php endforeach; ?>
         </div>
+        <?php else: ?>
+        <div class="text-center py-4 text-muted">
+            <p>Program populer akan segera ditampilkan. <a href="<?= base_url('courses') ?>">Lihat katalog program</a>.</p>
+        </div>
+        <?php endif; ?>
         
         <div class="text-center mt-5">
             <a href="<?= base_url('courses') ?>" class="btn btn-outline-primary px-4">Lihat Semua Program <i class="fas fa-arrow-right ms-2"></i></a>

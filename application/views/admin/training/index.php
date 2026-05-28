@@ -4,9 +4,22 @@ $breadcrumbs = [
     ['label' => 'Beranda', 'url' => base_url('admin/dashboard')],
     ['label' => 'Program Pelatihan'],
 ];
-$page_actions = '<a href="#" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i> Tambah Program</a>';
+$page_actions = '<a href="' . base_url('admin/training/add') . '" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i> Tambah Program</a>';
 $this->load->view('admin/layout/_page_header');
 ?>
+
+<?php if ($this->session->flashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible fade show rounded-3" role="alert">
+        <?= $this->session->flashdata('success') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('error')): ?>
+    <div class="alert alert-danger alert-dismissible fade show rounded-3" role="alert">
+        <?= $this->session->flashdata('error') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
 
 <div class="admin-panel">
     <div class="admin-panel-header">
@@ -30,7 +43,14 @@ $this->load->view('admin/layout/_page_header');
                 <tbody>
                     <?php if (empty($trainings)): ?>
                         <tr>
-                            <td colspan="8" class="text-center text-muted py-4">Belum ada data pelatihan.</td>
+                            <td colspan="8" class="text-center text-muted py-4">
+                                Belum ada data pelatihan.
+                                <div class="mt-3">
+                                    <a href="<?= base_url('admin/training/add') ?>" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-plus me-1"></i> Buat Program Pertama
+                                    </a>
+                                </div>
+                            </td>
                         </tr>
                     <?php else: ?>
                         <?php $no = 1; foreach ($trainings as $t): ?>
@@ -49,8 +69,8 @@ $this->load->view('admin/layout/_page_header');
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></a>
-                                    <a href="#" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                    <a href="<?= base_url('admin/training/edit/' . $t->id) ?>" class="btn btn-sm btn-outline-primary" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= base_url('admin/training/delete/' . $t->id) ?>" class="btn btn-sm btn-outline-danger" title="Hapus" onclick="return confirm('Hapus program ini?');"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

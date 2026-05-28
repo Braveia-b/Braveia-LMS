@@ -33,7 +33,7 @@
                                     <input class="form-check-input" type="checkbox" id="remember">
                                     <label class="form-check-label text-muted small" for="remember">Ingat Saya</label>
                                 </div>
-                                <a href="#" class="text-primary text-decoration-none small">Lupa Password?</a>
+                                <a href="<?= base_url('contact') ?>" class="text-primary text-decoration-none small">Lupa Password?</a>
                             </div>
                             <button type="submit" class="btn btn-primary w-100 py-2 rounded-3 fw-bold">Masuk</button>
                         </form>

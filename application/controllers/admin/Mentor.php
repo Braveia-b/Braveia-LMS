@@ -1,16 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Mentor extends CI_Controller {
+class Mentor extends MY_Controller {
 
     public function __construct()
     {
         parent::__construct();
-        // Cek login admin
-        if (!$this->session->userdata('is_logged_in') || !in_array($this->session->userdata('role_id'), [1, 2])) {
-            $this->session->set_flashdata('error', 'Anda tidak memiliki akses ke halaman ini.');
-            redirect('auth/login');
-        }
         $this->load->model('Mentor_model');
     }
 

@@ -1,7 +1,9 @@
 <?php
 $uri = $this->uri->uri_string();
 $nav_active = function ($segment) use ($uri) {
-    return strpos($uri, 'admin/' . $segment) === 0 ? 'active' : '';
+    if ($uri === 'admin/' . $segment) return 'active';
+    if (strpos($uri, 'admin/' . $segment . '/') === 0) return 'active';
+    return '';
 };
 ?>
 <aside class="admin-sidebar" id="adminSidebar">
@@ -32,19 +34,19 @@ $nav_active = function ($segment) use ($uri) {
             <i class="fas fa-tags"></i>
             <span>Kategori Program</span>
         </a>
-        <a href="#" class="admin-nav-link">
+        <a href="<?= base_url('admin/certification') ?>" class="admin-nav-link <?= $nav_active('certification') ?>">
             <i class="fas fa-certificate"></i>
             <span>Sertifikasi</span>
         </a>
 
         <div class="admin-nav-section">Webinar</div>
-        <a href="#" class="admin-nav-link">
+        <a href="<?= base_url('admin/webinar') ?>" class="admin-nav-link <?= $nav_active('webinar') ?>">
             <i class="fas fa-video"></i>
             <span>Event & Webinar</span>
         </a>
 
         <div class="admin-nav-section">Pengguna</div>
-        <a href="#" class="admin-nav-link">
+        <a href="<?= base_url('admin/participant') ?>" class="admin-nav-link <?= $nav_active('participant') ?>">
             <i class="fas fa-users"></i>
             <span>Peserta</span>
         </a>
@@ -54,11 +56,11 @@ $nav_active = function ($segment) use ($uri) {
         </a>
 
         <div class="admin-nav-section">Sistem</div>
-        <a href="#" class="admin-nav-link">
+        <a href="<?= base_url('admin/transaction') ?>" class="admin-nav-link <?= $nav_active('transaction') ?>">
             <i class="fas fa-receipt"></i>
             <span>Transaksi</span>
         </a>
-        <a href="#" class="admin-nav-link">
+        <a href="<?= base_url('admin/settings') ?>" class="admin-nav-link <?= $nav_active('settings') ?>">
             <i class="fas fa-cog"></i>
             <span>Pengaturan</span>
         </a>

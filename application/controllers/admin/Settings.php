@@ -1,22 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Training extends MY_Controller {
-
+class Settings extends MY_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Training_model');
     }
 
     public function index()
     {
-        $data['title'] = "Manajemen Pelatihan - Braveia LMS";
-        $data['trainings'] = $this->Training_model->get_all_trainings();
-        
+        $data['title'] = 'Pengaturan — Admin';
         $this->load->view('admin/layout/header', $data);
         $this->load->view('admin/layout/sidebar');
-        $this->load->view('admin/training/index', $data);
+        $this->load->view('admin/settings/index', $data);
         $this->load->view('admin/layout/footer');
     }
 }
+
